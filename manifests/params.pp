@@ -19,8 +19,8 @@ class postfix::params {
   $smtpd_recipient_restrictions = 'permit_mynetworks, reject_unauth_destination'
   $smtpd_data_restrictions      = 'reject_unauth_pipelining'
 
-  case $::osfamily {
-    'RedHat': {
+  case $facts['os']['family'] {
+    'RedHat', 'redhat': {
       $tls_bundle = '/etc/pki/tls/certs/ca-bundle.crt'
       $tls_package = 'openssl'
     }
