@@ -3,8 +3,8 @@
 #
 class postfix::params {
   $smtp_relay                   = true
-  $relay_host                   = $::domain
-  $mydomain                     = $::domain
+  $relay_host                   = $::facts['networking']['domain']
+  $mydomain                     = $::facts['networking']['domain']
   $relay_networks               = '127.0.0.1'
   $relay_domains                = undef
   $relay_username               = undef
